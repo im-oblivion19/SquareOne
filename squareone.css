@@ -1,0 +1,55 @@
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgb(228, 255, 255);
+}
+
+body {
+  background-color: #cff8fd;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+h2 {
+  text-align: center;
+}
+
+.page-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #2c7da0;
+}
+
+.page-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+p{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.item-info {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.byline{
+    text-align:center;
+}
+
+.rating{
+    text-align: center;
+}
+
+figure{
+    text-align: center;
+}
