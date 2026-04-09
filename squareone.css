@@ -32,7 +32,7 @@ h2 {
 }
 
 p{
-    font-size: 20px;
+    font-size: 17px;
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -53,3 +53,43 @@ p{
 figure{
     text-align: center;
 }
+
+
+.origami-category {
+            margin-bottom: 30px;
+        }
+
+        .category-title {
+            font-family: sans-serif;
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns */
+            gap: 20px; /* Space between items */
+        }
+
+        .grid-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .grid-item p {
+            margin: 0;
+            font-family: sans-serif;
+            font-size: 14px;
+            color: #555;
+        }
