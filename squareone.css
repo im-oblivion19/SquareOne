@@ -93,3 +93,26 @@ figure{
             font-size: 14px;
             color: #555;
         }
+
+  footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  background-color: #49617c;
+  color: #ffecec;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+}
+
+
+.logo-link {
+  position: fixed !important;
+  top: 10px;
+  left: 150px;
+  z-index: 1000
+}
+
+.logo-link img {
+  width: 60px;
+  height: auto;
+}
