@@ -114,13 +114,12 @@ figure{
   border-radius:14px;
   font-weight:700;
   color:#fff;
- 
-  top:10px;
- left:150px;
+
 }
 
 .site-logo img{
- width:60px;
+ width:200px;
+ height: 200px;
 
 }
 .site-logo-text{
