@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SquareOne Origami Mathematics Map</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="squareone.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+<a class="site-logo" href="index.html" aria-label="Logo">
+  <img src="images/logo.svg" alt="logo" class="logo">
+</a>
+           <nav class="site-nav" aria-label="Site navigation">
+        <a href="index.html">Home</a>
+        <a href="inventory.html">Inventory</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="map.html">Map</a>
+        
+      </nav>
+      <h1>Origami Mathematics Around the World</h1>
+       <p> Hover over each pin to see a famous theorem or 
+        mathematical idea connected to origami. <p>
+
+    </header>
+
+    <section class="map-card">
+      <div id="map"></div>
+    </section>
+
+    <section class="legend-card">
+      <h2>Featured Theorems</h2>
+      <ul id="location-list"></ul>
+    </section>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script>
+    const theoremPins = [
+      {
+        theorem: "Kawasaki's Theorem",
+        person: "Toshikazu Kawasaki",
+        country: "Japan",
+        region: "Asia",
+        coords: [35.6895, 139.6917],
+        summary: "A fundamental origami theorem for flat-foldable crease patterns. Around a single vertex, alternating angles must add to 180 degrees."
+      },
+      {
+        theorem: "Beloch's Fold",
+        person: "Margherita Piazzolla Beloch",
+        country: "Italy",
+        region: "Europe",
+        coords: [41.9028, 12.4964],
+        summary: "A paper-folding construction connected to solving cubic equations through origami geometry."
+      },
+      {
+        theorem: "Lang's Tree Theorem",
+        person: "Robert J. Lang",
+        country: "United States",
+        region: "North America",
+        coords: [34.0522, -118.2437],
+        summary: "A mathematical design method that uses circle and river packing to create fold layouts from a stick-figure skeleton."
+      },
+      {
+        theorem: "Fold-and-Cut Theorem",
+        person: "Erik Demaine",
+        country: "Canada / United States",
+        region: "North America",
+        coords: [43.4723, -80.5438],
+        summary: "Fold any flat sheet the right way, make one straight cut, and you can produce any polygon or group of shapes at once."
+      },
+      {
+        theorem: "Gaussian Curvature",
+        person: "Carl Friedrich Gauss",
+        country: "Germany",
+        region: "Europe",
+        coords: [51.2557, 10.5268],
+        summary: "The geometric idea behind curved-crease folding. Since flat paper has zero Gaussian curvature, bending it along curves forces the sheet to compensate."
+      }
+    ];
+
+    const map = L.map("map", {
+      center: [25, 10],
+      zoom: 2,
+      minZoom: 2,
+      maxZoom: 6,
+      scrollWheelZoom: false,
+      worldCopyJump: true
+    });
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; OpenStreetMap contributors"
+    }).addTo(map);
+
+    const squareOneIcon = L.divIcon({
+      className: "squareone-marker",
+      html: "<span></span>",
+      iconSize: [26, 26],
+      iconAnchor: [13, 13]
+    });
+
+    theoremPins.forEach(pin => {
+      const tooltipHTML = `
+        <div class="tooltip-header">
+          <span class="tooltip-kicker">SquareOne</span>
+          <h3>${pin.theorem}</h3>
+        </div>
+
+        <div class="tooltip-body">
+          <div class="tooltip-row">
+            <span class="tooltip-label">Person</span>
+            <span class="tooltip-value">${pin.person}</span>
+          </div>
+
+          <div class="tooltip-row">
+            <span class="tooltip-label">Place</span>
+            <span class="tooltip-value">${pin.country} · ${pin.region}</span>
+          </div>
+
+          <p class="tooltip-summary">${pin.summary}</p>
+        </div>
+      `;
+
+      const marker = L.marker(pin.coords, { icon: squareOneIcon }).addTo(map);
+
+      marker.bindTooltip(tooltipHTML, {
+        direction: "auto",
+        offset: [0, -14],
+        opacity: 1,
+        sticky: true,
+        className: "squareone-tooltip"
+      });
+    });
+
+    const list = document.querySelector("#location-list");
+
+    theoremPins.forEach(pin => {
+      const item = document.createElement("li");
+      item.innerHTML = `
+        <strong>${pin.theorem}</strong>
+        <span class="card-person">${pin.person}</span>
+        <span class="card-place">${pin.country} · ${pin.region}</span>
+        <p>${pin.summary}</p>
+      `;
+      list.appendChild(item);
+    });
+
+    setTimeout(() => {
+      map.invalidateSize();
+    }, 200);
+  </script>
+</body>
+</html>
