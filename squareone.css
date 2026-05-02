@@ -418,14 +418,11 @@ footer {
 }
 
 #location-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 18px;
+  justify-content: center;
   list-style: none;
-  margin: 0;
-  padding: 0;
+  display: grid;
+  gap: 30px
 }
-
 #location-list li {
   background: linear-gradient(180deg, #ffffff 0%, #eefbff 100%);
   border: 1px solid #b9e5ef;
@@ -501,11 +498,15 @@ footer {
 }
 
 .team-card img {
-  width: 100%;
+  width: auto;
+  max-width: 260px;
   height: auto;
   max-height: 260px; /* optional cap */
   object-fit: contain;
   display: block;
+  display: block;
+  margin: 0 auto;
+  padding: 0%;
 }
 
 .lead-card img {

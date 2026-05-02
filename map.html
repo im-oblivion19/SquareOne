@@ -36,7 +36,52 @@
 
     <section class="legend-card">
       <h2>Featured Theorems</h2>
-      <ul id="location-list"></ul>
+      <ul id="location-list">
+        <li>
+          <strong>Kawasaki's Theorem</strong>
+          <span class="card-person">Toshikazu Kawasaki</span>
+          <span class="card-place">Japan · Asia</span>
+          <p>
+            Kawasaki's Theorem is one of the central rules in origami mathematics. It determines whether a crease pattern around a single vertex can fold flat. The theorem states that alternating angles around that vertex must sum to exactly 180 degrees. This creates a balance that allows the paper to collapse without tearing or overlapping incorrectly. If this condition is not satisfied, the fold cannot lie flat. The theorem applies specifically to flat-foldable crease patterns. In practice, designers use it to check whether their patterns are valid before folding. It is often paired with Maekawa’s Theorem, which deals with mountain and valley folds. Together, they form the foundation of local origami geometry. This rule turns origami into a precise mathematical system rather than trial-and-error. It is widely used in both artistic design and mathematical research.
+          </p>
+        </li>
+
+        <li>
+          <strong>Beloch's Fold</strong>
+          <span class="card-person">Margherita Piazzolla Beloch</span>
+          <span class="card-place">Italy · Europe</span>
+          <p>
+            Beloch's Fold is a construction in origami that allows the solution of cubic equations. This is significant because classical compass-and-straightedge constructions cannot solve general cubic equations. The fold works by aligning points and lines simultaneously using a single crease. This creates geometric constraints that correspond to algebraic solutions. It shows that origami is more powerful than traditional geometric tools. Beloch discovered this while studying geometric folding problems. The method can be interpreted as physically solving equations using paper. This connects origami directly to algebra and number theory. Modern origami mathematics formalizes these ideas through origami axioms. These axioms define what constructions are possible using folds. Beloch's Fold is one of the most important examples of these principles. It demonstrates that folding can act as a computational process.
+          </p>
+        </li>
+
+        <li>
+          <strong>Lang's Tree Theorem</strong>
+          <span class="card-person">Robert J. Lang</span>
+          <span class="card-place">United States · North America</span>
+          <p>
+            Lang's Tree Theorem is used to design complex origami models with many moving parts. It begins with a tree structure, which represents the desired shape as a collection of connected segments. Each segment corresponds to a flap in the final model. The theorem explains how to convert this abstract structure into a crease pattern. This is done using a method called circle packing. Circles are arranged so that their sizes reflect the lengths of the segments. The gaps between circles define the folds. This guarantees that the design can be folded from a flat sheet of paper. It allows for highly detailed designs like insects, animals, and human figures. The method is algorithmic and can be implemented in software. Programs like TreeMaker automate this process. This connects origami with computer science, optimization, and geometry.
+          </p>
+        </li>
+
+        <li>
+          <strong>Fold-and-Cut Theorem</strong>
+          <span class="card-person">Erik Demaine</span>
+          <span class="card-place">Canada / United States · North America</span>
+          <p>
+            The Fold-and-Cut Theorem states that any straight-line shape can be produced with a single straight cut. The process involves folding the paper so that all edges of the desired shape align. Once aligned, one cut creates the entire figure. This works for any polygon and even multiple disconnected shapes. The result is surprising because it simplifies a complex cutting process into one action. The mathematics behind it involves geometry and graph theory. The folding creates layers that encode the structure of the shape. Researchers proved that such a folding always exists. This has applications in design, manufacturing, and education. It also appears in puzzles and recreational math. The theorem highlights how folding can simplify otherwise complicated operations.
+          </p>
+        </li>
+
+        <li>
+          <strong>Gaussian Curvature</strong>
+          <span class="card-person">Carl Friedrich Gauss</span>
+          <span class="card-place">Germany · Europe</span>
+          <p>
+            Gaussian curvature describes how a surface bends in space. Flat paper has zero Gaussian curvature, which means it cannot stretch or compress without distortion. This constraint is fundamental in origami. When folding along curves, the paper must adjust by forming wrinkles or lifting into three dimensions. This explains why smooth curved shapes are difficult to achieve with flat sheets. Gauss showed that curvature is an intrinsic property of a surface. It does not depend on how the surface is positioned in space. In origami, this limits the shapes that can be created without cutting. Designers must work within these geometric constraints. Curved-crease origami explores ways to manage this behavior. It leads to structures like domes and shells. The concept connects origami to differential geometry and physics.
+          </p>
+        </li>
+      </ul>
     </section>
   </div>
 
@@ -139,25 +184,13 @@
       });
     });
 
-    const list = document.querySelector("#location-list");
-
-    theoremPins.forEach(pin => {
-      const item = document.createElement("li");
-      item.innerHTML = `
-        <strong>${pin.theorem}</strong>
-        <span class="card-person">${pin.person}</span>
-        <span class="card-place">${pin.country} · ${pin.region}</span>
-        <p>${pin.summary}</p>
-      `;
-      list.appendChild(item);
-    });
-
     setTimeout(() => {
       map.invalidateSize();
     }, 200);
   </script>
-   <footer id="site-footer">
-  <p>&copy; SquareOne 2026. All rights reserved.</p>
-</footer>
+
+  <footer id="site-footer">
+    <p>&copy; SquareOne 2026. All rights reserved.</p>
+  </footer>
 </body>
 </html>
