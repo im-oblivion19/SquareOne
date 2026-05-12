@@ -587,3 +587,204 @@ footer {
 
   background-color: white;
 }
+
+/* =========================
+   TEAM SECTION
+========================= */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 34px;
+  margin-top: 40px;
+}
+
+.team-card {
+  background: linear-gradient(
+    180deg,
+    #e9fdff 0%,
+    #d9f3f6 100%
+  );
+
+  border: 2px solid #bddde3;
+
+  border-radius: 28px;
+
+  padding: 28px;
+
+  box-shadow:
+    0 10px 26px rgba(0,0,0,0.08);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 16px 34px rgba(0,0,0,0.12);
+}
+
+.team-card img {
+  width: 100%;
+  max-width: 360px;
+  height: 360px;
+
+  object-fit: contain;
+
+  display: block;
+  margin: 0 auto 22px;
+
+  border-radius: 18px;
+
+  background: white;
+
+  padding: 10px;
+}
+
+.team-card h3 {
+  font-size: 28px;
+  margin-top: 12px;
+  margin-bottom: 16px;
+  color: #17324f;
+}
+
+.team-card p {
+  text-align: center;
+  color: #2d465f;
+  line-height: 1.8;
+}
+
+/* =========================
+   LEAD CARD
+========================= */
+
+.lead-card {
+  grid-column: 1 / -1;
+
+  display: grid;
+  grid-template-columns: 420px 1fr;
+
+  gap: 34px;
+
+  align-items: center;
+}
+
+.lead-card img {
+  max-width: 420px;
+  height: 420px;
+}
+
+.team-info {
+  padding: 10px;
+}
+
+/* =========================
+   ROLE TAGS
+========================= */
+
+.role-tag {
+  display: inline-block;
+
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    #5b8bb3,
+    #3f6e97
+  );
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  margin-bottom: 18px;
+}
+
+.role-tag.lead {
+  background: linear-gradient(
+    135deg,
+    #cf4636,
+    #af2f23
+  );
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lead-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .lead-card img {
+    margin: 0 auto;
+  }
+}
+
+/* review spacing + image sizing fixes */
+
+.review-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 42px;
+  align-items: start;
+}
+
+.review-left {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.review-left figure {
+  margin: 0 0 18px;
+  padding: 18px;
+}
+
+.review-left figure img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto 12px;
+  object-fit: contain;
+}
+
+#ruler-review .review-left figure img {
+  max-width: 280px;
+}
+
+.byline,
+.rating {
+  text-align: center;
+  margin: 4px 0;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.item-info {
+  margin-top: 12px;
+}
+
+.review-right {
+  padding: 28px;
+  overflow: visible;
+}
+
+.review-right p {
+  margin-top: 0;
+  margin-bottom: 22px;
+}
